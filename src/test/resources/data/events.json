@@ -1,0 +1,9 @@
+{ "id":1, "ts": "1493078400","type":"1","customer_id":"1",  "orders":[ {"order_id":"1000","price":20}, {"order_id":"1001","price":22} ] }
+{  "id":2,  "ts": "1493079400","type":"2","customer_id":"1",  "page_viewed":"products.html"  }
+{  "id":3,  "ts": "1493079600","type":"1","customer_id":"1",  "orders":[ {"order_id":"1002","price":30}, {"order_id":"1003","price":32} ] }
+{  "id":4,  "ts": "1493079800","type":"2","customer_id":"1",  "page_viewed":"new.html"  }
+{  "id":5,  "ts": "1493080850","type":"1","customer_id":"2",  "orders":[ {"order_id":"1004","price":40}, {"order_id":"1005","price":42}, {"order_id":"1006","price":44} ] }
+{  "id":6,  "ts": "1493080900","type":"2","customer_id":"2",  "page_viewed":"contacts.html"  }
+{  "id":7,  "ts": "1493081200","type":"1","customer_id":"2",  "orders":[  {"order_id":"1007","price":50} ] }
+{  "id":8,  "ts": "1493081400","type":"2","customer_id":"2",  "page_viewed":"offers.html"  }
+
