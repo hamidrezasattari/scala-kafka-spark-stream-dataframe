@@ -7,6 +7,7 @@ $ tar -xzf kafka_*.tgz
 $ cd kafka_*
 
 ####2-Start Servers:
+
 1- bin/zookeeper-server-start.sh config/zookeeper.properties
 
 2- bin/kafka-server-start.sh config/server.properties
