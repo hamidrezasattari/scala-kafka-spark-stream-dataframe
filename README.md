@@ -16,9 +16,12 @@ $ cd kafka_*
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mytopic
 
 --you can see available topics:
+
 bin/kafka-topics.sh --list --zookeeper localhost:2181
 
 ####4-Run Consumer and Producer:
+
 1-Using IDE, Right click on Consumer and click run
+
 2-In IDE, Right click on Producer and click run then check Consumer console
 for result
