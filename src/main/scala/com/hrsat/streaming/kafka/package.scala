@@ -2,6 +2,8 @@ package com.hrsat.streaming
 
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.types._
+
 
 
 /**
@@ -30,6 +32,18 @@ package object kafka {
 
 
 
-
+  val schema = StructType(
+    Array(
+      StructField("customer_id", StringType, false),
+      StructField("id", IntegerType, false),
+      StructField("page_viewed", StringType, true),
+      StructField("orders", ArrayType(StructType(Array(
+        StructField("order_id", StringType),
+        StructField("price", IntegerType)
+      ))),true),
+      StructField("ts", StringType, false),
+      StructField("type", StringType, false)
+    )
+  )
 
 }

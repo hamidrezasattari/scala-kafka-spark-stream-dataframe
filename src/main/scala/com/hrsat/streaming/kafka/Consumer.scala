@@ -23,16 +23,17 @@ object Consumer extends  App {
    .option("kafka.bootstrap.servers", config.getString("kafka.brokers"))
 
    .option("subscribe", config.getString("kafka.topic"))
- /** TODO startingOffsets: set as json string
-  {"topicA":{"0":23,"1":-1},"topicB":{"0":-2}}
+ /** TODO : set as json string
+ .option("startingOffsets", """{"mytopic1":{"0":23,"1":-2},"mytopic2":{"0":-2}}""")
+  .option("endingOffsets", """{"mytopic1":{"0":50,"1":-1},"mytopic2":{"0":-1}}""")
    */
    .option("startingOffsets", "latest")
    .load()
   import spark.implicits._
 
 
-  val df1 = df.selectExpr("CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)").as[(String, Timestamp)]
-
+ val df1 = df.selectExpr("CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)").as[(String, Timestamp)]
+   .withColumn("data", from_json( col("value").cast("string"), schema)).select("data.*", "timestamp")
 
   df1.writeStream
 
